@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumeru Infrastructures | Luxury Flats & Properties in Dehradun</title>
+
+    <!-- ══ SEO META TAGS ══ -->
+    <meta name="description" content="Sumeru Infrastructures offers premium residential properties in Dehradun — Eastern Arc, Paras Tower, Sumeru Vihar. Chat with us to book your dream home today!">
+    <meta name="keywords" content="flats in Dehradun, property in Dehradun, Eastern Arc Dehradun, Paras Tower Dehradun, Sumeru Vihar, 2BHK Dehradun, 3BHK Dehradun, luxury apartments Dehradun, real estate Dehradun, Sumeru Infrastructures">
+    <meta name="author" content="Sumeru Infrastructures">
+    <meta name="robots" content="index, follow">
+
+    <!-- ══ Open Graph (WhatsApp / Facebook preview) ══ -->
+    <meta property="og:title" content="Sumeru Infrastructures | Premium Properties in Dehradun">
+    <meta property="og:description" content="Explore luxury flats in Dehradun — Eastern Arc, Paras Tower & Sumeru Vihar. Talk to our AI assistant now!">
+    <meta property="og:url" content="https://sumeru-infrastructures-dehradun.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://static.wixstatic.com/media/b69fe8_eb049ae6a1e84041b980c0b83f750f26~mv2.png/v1/fill/w_574,h_212,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_PNG.png">
+
+    <!-- ══ Twitter Card ══ -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sumeru Infrastructures | Dehradun Properties">
+    <meta name="twitter:description" content="Premium flats in Dehradun. Eastern Arc, Paras Tower & Sumeru Vihar.">
+
+    <!-- ══ Canonical URL ══ -->
+    <link rel="canonical" href="https://sumeru-infrastructures-dehradun.vercel.app">
+
+    <!-- ══ Schema Markup (Real Estate) ══ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Sumeru Infrastructures",
+        "description": "Premium residential properties in Dehradun — Eastern Arc, Paras Tower, Sumeru Vihar",
+        "url": "https://sumeru-infrastructures-dehradun.vercel.app",
+        "logo": "https://static.wixstatic.com/media/b69fe8_eb049ae6a1e84041b980c0b83f750f26~mv2.png/v1/fill/w_574,h_212,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_PNG.png",
+        "areaServed": "Dehradun, Uttarakhand, India",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dehradun",
+            "addressRegion": "Uttarakhand",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        /* ── Chat Toggle Button ── */
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            width: 65px; height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            border: none; cursor: pointer;
+            box-shadow: 0 8px 25px rgba(26,74,46,0.5);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+        .chat-toggle:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 12px 35px rgba(26,74,46,0.6); }
+        .chat-toggle svg { width: 32px; height: 32px; fill: white; }
+        .chat-toggle.active { background: linear-gradient(135deg, #c47f2a 0%, #a06520 100%); transform: rotate(90deg); }
+        .chat-icon, .close-icon { transition: all 0.3s ease; }
+        .close-icon { display: none; }
+        .chat-toggle.active .chat-icon { display: none; }
+        .chat-toggle.active .close-icon { display: block; }
+        .chat-toggle::before {
+            content: '';
+            position: absolute; width: 100%; height: 100%; border-radius: 50%;
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            opacity: 0.3; animation: pulse-ring 2s ease-out infinite;
+        }
+        @keyframes pulse-ring { 0%{transform:scale(1);opacity:0.3;} 50%{transform:scale(1.3);opacity:0;} 100%{transform:scale(1);opacity:0;} }
+
+        /* ── Chat Bubble ── */
+        .chat-bubble {
+            position: fixed; bottom: 100px; right: 20px;
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            color: white; padding: 14px 18px;
+            border-radius: 20px; border-bottom-right-radius: 4px;
+            font-size: 14px; font-weight: 600;
+            box-shadow: 0 8px 20px rgba(26,74,46,0.4);
+            z-index: 9998; animation: bubbleFloat 3s ease-in-out infinite;
+            display: flex; align-items: center; gap: 10px; max-width: 280px;
+        }
+        .chat-bubble.hidden { display: none; }
+        @keyframes bubbleFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-8px) scale(1.02);} }
+        .wave-emoji { display: inline-block; animation: wave 1.5s ease-in-out infinite; font-size: 20px; }
+        @keyframes wave { 0%,100%{transform:rotate(0deg);} 25%{transform:rotate(25deg);} 75%{transform:rotate(-15deg);} }
+
+        /* ── Notification Badge ── */
+        .notification-badge {
+            position: absolute; top: -8px; right: -8px;
+            background: linear-gradient(135deg, #c47f2a 0%, #a06520 100%);
+            color: white; width: 26px; height: 26px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: bold; border: 3px solid white;
+            animation: badgePulse 2s ease-in-out infinite;
+            box-shadow: 0 3px 10px rgba(196,127,42,0.4);
+        }
+        @keyframes badgePulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.15);} }
+
+        /* ── Chat Container ── */
+        .chat-container {
+            position: fixed; bottom: 100px; right: 20px;
+            width: 400px; height: 600px;
+            background: white; border-radius: 20px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.3);
+            display: none; flex-direction: column; overflow: hidden;
+            z-index: 9999; animation: slideUpScale 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .chat-container.active { display: flex; }
+        @keyframes slideUpScale { from{opacity:0;transform:translateY(30px) scale(0.9);} to{opacity:1;transform:translateY(0) scale(1);} }
+
+        /* ── Chat Header ── */
+        .chat-header {
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            color: white; padding: 13px 14px;
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 4px 15px rgba(26,74,46,0.3);
+            flex-shrink: 0; position: relative; overflow: hidden;
+        }
+        .chat-header::before {
+            content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            animation: headerShine 3s ease-in-out infinite;
+        }
+        @keyframes headerShine { 0%,100%{transform:translate(-50%,-50%);} 50%{transform:translate(0%,0%);} }
+
+        /* ── Logo Avatar ── */
+        .chat-header-avatar {
+            width: 48px; height: 48px; border-radius: 50%; background: white;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            border: 2.5px solid rgba(196,127,42,0.7); position: relative; z-index: 1;
+            overflow: hidden; padding: 5px;
+        }
+        .chat-header-avatar img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 0; filter: none; }
+
+        .chat-header-info { flex: 1; position: relative; z-index: 1; min-width: 0; }
+        .chat-header-info h3 { font-size: 14px; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .chat-header-info p  { font-size: 11px; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+        .status-dot {
+            width: 7px; height: 7px; background: #4ade80; border-radius: 50%;
+            display: inline-block; animation: statusBlink 2s ease-in-out infinite; box-shadow: 0 0 8px #4ade80;
+        }
+        @keyframes statusBlink { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+        .ai-badge {
+            background: rgba(196,127,42,0.3); padding: 3px 9px; border-radius: 14px;
+            font-size: 9px; font-weight: bold; margin-top: 3px; display: inline-block;
+            border: 1px solid rgba(196,127,42,0.5);
+        }
+
+        /* ── Registration Overlay ── */
+        .registration-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: white; z-index: 10; display: flex; flex-direction: column; overflow-y: auto;
+        }
+        .registration-overlay.hidden { display: none; }
+        .registration-header {
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            color: white; padding: 22px 20px; text-align: center; flex-shrink: 0; position: relative; overflow: hidden;
+        }
+        .registration-header .reg-logo-wrap {
+            width: 72px; height: 72px; border-radius: 50%; background: white;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 12px auto; padding: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            border: 2.5px solid rgba(196,127,42,0.7); overflow: hidden;
+        }
+        .registration-header .reg-logo-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .registration-header h2 { font-size: 19px; margin-bottom: 6px; position: relative; z-index: 1; }
+        .registration-header p  { font-size: 13px; opacity: 0.9; position: relative; z-index: 1; }
+        .registration-form { flex: 1; padding: 22px; overflow-y: auto; background: linear-gradient(to bottom,#fafafa,#fff); }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 600; color: #333; }
+        .form-group label .required { color: #c47f2a; }
+        .form-group input {
+            width: 100%; padding: 12px 16px; border: 2px solid #e5e5e5;
+            border-radius: 12px; font-size: 14px; transition: all 0.3s ease; outline: none; background: white;
+        }
+        .form-group input:focus { border-color: #1a4a2e; box-shadow: 0 0 0 4px rgba(26,74,46,0.1); transform: translateY(-1px); }
+        .form-group input.error { border-color: #c47f2a; animation: shake 0.5s ease; }
+        @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-10px);} 75%{transform:translateX(10px);} }
+        @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+        .error-message { color: #c47f2a; font-size: 12px; margin-top: 6px; display: none; }
+        .error-message.show { display: block; animation: fadeIn 0.3s ease; }
+        .submit-btn {
+            width: 100%; padding: 13px; background: linear-gradient(135deg,#1a4a2e,#0d2d1a);
+            color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease; margin-top: 6px; box-shadow: 0 4px 15px rgba(26,74,46,0.4);
+        }
+        .submit-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,74,46,0.5); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .form-note { text-align: center; font-size: 12px; color: #666; margin-top: 14px; padding: 12px; background: white; border-radius: 10px; border: 1px solid #e5e5e5; }
+        .loading-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; }
+        @keyframes spin { to{transform:rotate(360deg);} }
+
+        /* ── Chat Messages ── */
+        .chat-messages { flex: 1; padding: 16px; overflow-y: auto; background: linear-gradient(to bottom,#f9f9f7,#fff); -webkit-overflow-scrolling: touch; }
+        .chat-messages::-webkit-scrollbar { width: 6px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 10px; }
+        .message { margin-bottom: 14px; display: flex; animation: messageSlide 0.4s ease; }
+        @keyframes messageSlide { from{opacity:0;transform:translateY(15px);} to{opacity:1;transform:translateY(0);} }
+        .message.bot  { justify-content: flex-start; }
+        .message.user { justify-content: flex-end; }
+        .message-content { max-width: 80%; padding: 12px 16px; border-radius: 18px; font-size: 14px; line-height: 1.6; word-wrap: break-word; }
+        .message.bot .message-content  { background: white; color: #333; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; }
+        .message.user .message-content { background: linear-gradient(135deg,#1a4a2e,#0d2d1a); color: white; border-bottom-right-radius: 4px; box-shadow: 0 2px 8px rgba(26,74,46,0.4); }
+
+        /* ── Quick Replies ── */
+        .quick-replies { padding: 10px 14px; background: white; border-top: 1px solid #e5e5e5; display: flex; gap: 8px; flex-wrap: wrap; overflow-x: auto; flex-shrink: 0; max-height: 95px; }
+        .quick-replies::-webkit-scrollbar { height: 0; }
+        .quick-reply-btn { padding: 7px 13px; background: linear-gradient(135deg,#f9f9f7,#fff); border: 2px solid #e5e5e5; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; font-weight: 500; }
+        .quick-reply-btn:hover { background: linear-gradient(135deg,#1a4a2e,#0d2d1a); color: white; border-color: transparent; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26,74,46,0.4); }
+        .back-to-menu-btn { padding: 7px 13px; background: linear-gradient(135deg,#c47f2a,#a06520); border: none; border-radius: 20px; color: white; font-size: 12px; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; font-weight: 600; display: none; }
+        .back-to-menu-btn.show { display: inline-block; }
+        .back-to-menu-btn:hover { background: linear-gradient(135deg,#a06520,#7a4e18); transform: translateY(-2px); }
+
+        /* ── Chat Input ── */
+        .chat-input { padding: 12px 14px; background: white; border-top: 1px solid #e5e5e5; display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+        .chat-input input { flex: 1; padding: 11px 16px; border: 2px solid #e5e5e5; border-radius: 24px; font-size: 14px; outline: none; transition: all 0.3s ease; background: #fafafa; }
+        .chat-input input:focus { border-color: #1a4a2e; background: white; box-shadow: 0 0 0 3px rgba(26,74,46,0.1); }
+        .chat-input input:disabled { background: #f5f5f5; cursor: not-allowed; }
+        .chat-input button { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#1a4a2e,#0d2d1a); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; flex-shrink: 0; box-shadow: 0 3px 10px rgba(26,74,46,0.4); }
+        .chat-input button:hover:not(:disabled) { transform: scale(1.1) rotate(5deg); }
+        .chat-input button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .chat-input button svg { width: 20px; height: 20px; fill: white; }
+
+        /* ── Typing Indicator ── */
+        .typing-indicator { display: none; padding: 12px 16px; background: white; border-radius: 18px; border-bottom-left-radius: 4px; max-width: 75px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; }
+        .typing-indicator span { height: 9px; width: 9px; background: #1a4a2e; border-radius: 50%; display: inline-block; margin-right: 5px; animation: typing 1.4s infinite; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; margin-right: 0; }
+        @keyframes typing { 0%,60%,100%{transform:translateY(0);opacity:0.7;} 30%{transform:translateY(-10px);opacity:1;} }
+
+        /* ══════════════════════════════════════
+           ROI CALCULATOR MODAL
+        ══════════════════════════════════════ */
+        .roi-modal {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: white; z-index: 20;
+            display: none; flex-direction: column; overflow: hidden;
+            animation: slideUpScale 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .roi-modal.active { display: flex; }
+        .roi-modal-header {
+            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+            color: white; padding: 14px 16px;
+            display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+        }
+        .roi-modal-header .roi-back-btn {
+            background: rgba(255,255,255,0.15); border: none; color: white;
+            width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; transition: all 0.2s; flex-shrink: 0;
+        }
+        .roi-modal-header .roi-back-btn:hover { background: rgba(255,255,255,0.3); }
+        .roi-modal-header h3 { font-size: 15px; font-weight: 700; }
+        .roi-modal-header p  { font-size: 11px; opacity: 0.85; margin-top: 2px; }
+        .roi-modal-body { flex: 1; overflow-y: auto; padding: 18px 16px; background: #f8f9fa; }
+        .roi-modal-body::-webkit-scrollbar { width: 5px; }
+        .roi-modal-body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+        .roi-section { background: white; border-radius: 14px; padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+        .roi-section h4 { font-size: 13px; font-weight: 700; color: #1a4a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8f4ee; display: flex; align-items: center; gap: 6px; }
+        .roi-field { margin-bottom: 14px; }
+        .roi-field:last-child { margin-bottom: 0; }
+        .roi-field label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 8px; }
+        .roi-input-wrap { position: relative; display: flex; align-items: center; }
+        .roi-input-wrap .prefix { position: absolute; left: 14px; font-size: 15px; font-weight: 700; color: #1a4a2e; z-index: 1; }
+        .roi-input-wrap input[type="number"] {
+            width: 100%; padding: 11px 14px 11px 32px;
+            border: 2px solid #e5e5e5; border-radius: 10px;
+            font-size: 15px; font-weight: 600; color: #222;
+            outline: none; transition: all 0.3s; background: #fafafa;
+            -moz-appearance: textfield;
+        }
+        .roi-input-wrap input[type="number"]::-webkit-outer-spin-button,
+        .roi-input-wrap input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+        .roi-input-wrap input[type="number"]:focus { border-color: #1a4a2e; background: white; box-shadow: 0 0 0 3px rgba(26,74,46,0.1); }
+        .roi-slider-wrap { display: flex; align-items: center; gap: 10px; }
+        .roi-slider { flex: 1; -webkit-appearance: none; height: 6px; border-radius: 10px; background: #e0e0e0; outline: none; cursor: pointer; }
+        .roi-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg,#1a4a2e,#0d2d1a); cursor: pointer; box-shadow: 0 2px 8px rgba(26,74,46,0.4); border: 3px solid white; }
+        .roi-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg,#1a4a2e,#0d2d1a); cursor: pointer; border: 3px solid white; }
+        .roi-slider-value { min-width: 58px; text-align: center; padding: 6px 10px; background: #1a4a2e; color: white; border-radius: 8px; font-size: 13px; font-weight: 700; }
+        .roi-results { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+        .roi-results h4 { font-size: 13px; font-weight: 700; color: #1a4a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8f4ee; display: flex; align-items: center; gap: 6px; }
+        .roi-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .roi-result-card { background: linear-gradient(135deg, #f0f7f3, #e8f4ee); border-radius: 12px; padding: 14px 12px; text-align: center; border: 1px solid #c8e6d4; }
+        .roi-result-card.full { grid-column: 1 / -1; background: linear-gradient(135deg, #1a4a2e, #0d2d1a); color: white; border: none; }
+        .roi-result-card .result-label { font-size: 11px; color: #666; font-weight: 600; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .roi-result-card.full .result-label { color: rgba(255,255,255,0.8); }
+        .roi-result-card .result-value { font-size: 20px; font-weight: 800; color: #1a4a2e; }
+        .roi-result-card.full .result-value { font-size: 24px; color: #7dda9e; }
+        .roi-result-card .result-value.negative { color: #e53e3e; }
+        .roi-calc-btn {
+            width: 100%; padding: 13px; margin-top: 14px;
+            background: linear-gradient(135deg, #c47f2a, #a06520);
+            color: white; border: none; border-radius: 12px;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            transition: all 0.3s; box-shadow: 0 4px 15px rgba(196,127,42,0.4);
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .roi-calc-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,127,42,0.5); }
+        .roi-cta { margin-top: 14px; padding: 13px; background: linear-gradient(135deg,#f0f7f3,#e8f4ee); border-radius: 12px; border: 1px solid #c8e6d4; text-align: center; }
+        .roi-cta p { font-size: 13px; color: #444; margin-bottom: 10px; font-weight: 600; }
+        .roi-cta button { padding: 9px 20px; background: linear-gradient(135deg,#1a4a2e,#0d2d1a); color: white; border: none; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .roi-cta button:hover { transform: translateY(-1px); }
+
+
+        /* ── OTP Step ── */
+        .otp-step { display: none; }
+        .otp-step.active { display: block; }
+        .details-step { display: block; }
+        .details-step.hidden { display: none; }
+        .otp-info-box { background: linear-gradient(135deg, #f0f7f3, #e8f4ee); border: 1px solid #c8e6d4; border-radius: 12px; padding: 16px; margin-bottom: 20px; text-align: center; }
+        .otp-info-box p { font-size: 13px; color: #444; line-height: 1.6; }
+        .otp-info-box strong { color: #1a4a2e; }
+        .otp-input-group { display: flex; gap: 8px; justify-content: center; margin: 16px 0; }
+        .otp-input-group input { width: 44px; height: 52px; text-align: center; font-size: 22px; font-weight: 800; border: 2.5px solid #e5e5e5; border-radius: 12px; outline: none; transition: all 0.3s; color: #1a4a2e; background: white; }
+        .otp-input-group input:focus { border-color: #1a4a2e; box-shadow: 0 0 0 3px rgba(26,74,46,0.15); transform: scale(1.08); }
+        .otp-input-group input.filled { border-color: #1a4a2e; background: #f0f7f3; }
+        .resend-row { text-align: center; margin-top: 10px; }
+        .resend-btn { background: none; border: none; color: #1a4a2e; font-size: 13px; cursor: pointer; font-weight: 600; text-decoration: underline; padding: 4px; }
+        .resend-btn:disabled { color: #aaa; text-decoration: none; cursor: not-allowed; }
+        .resend-timer { font-size: 13px; color: #888; }
+        .back-to-details-btn { background: none; border: 2px solid #e5e5e5; border-radius: 10px; color: #666; font-size: 13px; cursor: pointer; padding: 9px 16px; width: 100%; margin-bottom: 10px; font-weight: 500; transition: all 0.3s; }
+        .back-to-details-btn:hover { border-color: #1a4a2e; color: #1a4a2e; }
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .chat-container { bottom:0;right:0;left:0;top:0;width:100%;height:100%;border-radius:0;max-height:100vh; }
+            .chat-bubble { bottom:95px;right:15px;max-width:220px;font-size:13px; }
+            .chat-toggle { bottom:15px;right:15px;width:60px;height:60px; }
+            .roi-result-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Chat Bubble -->
+<div class="chat-bubble" id="chatBubble">
+    <span class="wave-emoji">👋</span>
+    <span>Looking for your dream property?</span>
+</div>
+
+<!-- Chat Toggle Button -->
+<button class="chat-toggle" id="chatToggle">
+    <span class="notification-badge">1</span>
+    <svg viewBox="0 0 24 24" class="chat-icon"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <svg viewBox="0 0 24 24" class="close-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+</button>
+
+<!-- Chat Container -->
+<div class="chat-container" id="chatContainer">
+
+    <!-- Registration Overlay -->
+    <div class="registration-overlay" id="registrationOverlay">
+        <div class="registration-header">
+            <div class="reg-logo-wrap">
+                <img src="https://static.wixstatic.com/media/b69fe8_eb049ae6a1e84041b980c0b83f750f26~mv2.png/v1/fill/w_574,h_212,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_PNG.png" alt="Sumeru Infrastructures Logo" onerror="this.parentElement.innerHTML='🏢'">
+            </div>
+            <h2>Welcome to Sumeru Infrastructures!</h2>
+            <p>Please share your details to start chatting</p>
+        </div>
+        <div class="registration-form">
+            <!-- Step 1: User Details -->
+            <div class="details-step" id="detailsStep">
+              <form id="userDetailsForm">
+                <div class="form-group">
+                    <label for="userName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="userName" placeholder="Enter your full name" required>
+                    <div class="error-message" id="nameError">Please enter your name</div>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="userEmail" placeholder="example@email.com" required>
+                    <div class="error-message" id="emailError">Please enter a valid email</div>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="userPhone" placeholder="10-digit mobile number" required maxlength="10">
+                    <div class="error-message" id="phoneError">Please enter a valid 10-digit number</div>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Send OTP 📧</button>
+                <div class="form-note">🔒 An OTP will be sent to your email to verify your identity.</div>
+              </form>
+            </div>
+            <!-- Step 2: OTP Verification -->
+            <div class="otp-step" id="otpStep">
+              <div class="otp-info-box">
+                <p>📧 OTP sent to<br><strong id="otpEmailDisplay"></strong></p>
+                <p style="margin-top:6px;font-size:12px;color:#888;">Check your inbox (and spam folder)</p>
+              </div>
+              <div class="form-group">
+                <label style="text-align:center;display:block;margin-bottom:12px;">Enter 6-digit OTP</label>
+                <div class="otp-input-group" id="otpInputGroup">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="0" inputmode="numeric">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="1" inputmode="numeric">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="2" inputmode="numeric">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="3" inputmode="numeric">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="4" inputmode="numeric">
+                  <input type="text" maxlength="1" class="otp-digit" data-index="5" inputmode="numeric">
+                </div>
+                <div class="error-message" id="otpError" style="text-align:center;"></div>
+              </div>
+              <button class="submit-btn" id="verifyOtpBtn">Verify & Start Chatting 🏡</button>
+              <div class="resend-row">
+                <span class="resend-timer" id="resendTimer">Resend OTP in <span id="resendCountdown">30</span>s</span>
+                <button class="resend-btn" id="resendBtn" disabled>Resend OTP</button>
+              </div>
+              <button class="back-to-details-btn" id="backToDetailsBtn">← Change Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ ROI CALCULATOR MODAL ══ -->
+    <div class="roi-modal" id="roiModal">
+        <div class="roi-modal-header">
+            <button class="roi-back-btn" id="roiBackBtn">←</button>
+            <div>
+                <h3>💹 ROI Calculator</h3>
+                <p>Return on Investment Calculator</p>
+            </div>
+        </div>
+        <div class="roi-modal-body">
+            <div class="roi-section">
+                <h4>📥 Investment Details</h4>
+                <div class="roi-field">
+                    <label>Amount Invested</label>
+                    <div class="roi-input-wrap">
+                        <span class="prefix">₹</span>
+                        <input type="number" id="roiInvested" placeholder="Enter the Value" min="0">
+                    </div>
+                </div>
+                <div class="roi-field">
+                    <label>Amount Returned (Expected)</label>
+                    <div class="roi-input-wrap">
+                        <span class="prefix">₹</span>
+                        <input type="number" id="roiReturned" placeholder="Enter the Value"  min="0">
+                    </div>
+                </div>
+                <div class="roi-field">
+                    <label>Investment Period</label>
+                    <div class="roi-slider-wrap">
+                        <input type="range" class="roi-slider" id="roiYears" min="1" max="30" value="3">
+                        <div class="roi-slider-value" id="roiYearsDisplay">3 Yrs</div>
+                    </div>
+                </div>
+            </div>
+            <button class="roi-calc-btn" id="roiCalcBtn">📊 Calculate ROI</button>
+            <div class="roi-results" id="roiResults" style="margin-top:14px; display:none;">
+                <h4>📈 Your Returns</h4>
+                <div class="roi-result-grid">
+                    <div class="roi-result-card full">
+                        <div class="result-label">Total Gain on Investment</div>
+                        <div class="result-value" id="resGain">₹ 0</div>
+                    </div>
+                    <div class="roi-result-card">
+                        <div class="result-label">Return on Investment (ROI)</div>
+                        <div class="result-value" id="resROI">0%</div>
+                    </div>
+                    <div class="roi-result-card">
+                        <div class="result-label">Simple Annual ROI</div>
+                        <div class="result-value" id="resSimple">0%</div>
+                    </div>
+                    <div class="roi-result-card full" style="background:linear-gradient(135deg,#f0f7f3,#e8f4ee);border:1px solid #c8e6d4;">
+                        <div class="result-label" style="color:#666;">Compound Annual Growth Rate (CAGR)</div>
+                        <div class="result-value" id="resCAGR" style="color:#1a4a2e;font-size:22px;">0%</div>
+                    </div>
+                </div>
+                <div class="roi-cta">
+                    <p>🏡 Interested in investing with Sumeru?</p>
+                    <button onclick="closeROIandContact()">📞 Talk to Our Expert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Header -->
+    <div class="chat-header">
+        <div class="chat-header-avatar">
+            <img src="https://static.wixstatic.com/media/b69fe8_eb049ae6a1e84041b980c0b83f750f26~mv2.png/v1/fill/w_574,h_212,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_PNG.png" alt="Sumeru Infrastructures" onerror="this.parentElement.innerHTML='🏢'; this.parentElement.style.fontSize='22px';">
+        </div>
+        <div class="chat-header-info">
+            <h3>Sumeru Infrastructures</h3>
+            <p><span class="status-dot"></span><span>Online • Ready to help</span></p>
+            <span class="ai-badge">🤖 AI-POWERED</span>
+        </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Replies -->
+    <div class="quick-replies" id="quickReplies">
+        <button class="back-to-menu-btn" id="backToMenuBtn">⬅️ Back to Menu</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Eastern Arc">🏡 Eastern Arc</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Paras Tower">🏢 Paras Tower</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Sumeru Vihar">🌿 Sumeru Vihar</button>
+        <button class="quick-reply-btn" data-reply="apartment types and configurations">🏠 Apartments</button>
+        <button class="quick-reply-btn" data-reply="amenities in the project">✨ Amenities</button>
+        <button class="quick-reply-btn roi-trigger-btn">💹 ROI Calculator</button>
+        <button class="quick-reply-btn" data-reply="property investment">💰 Investment</button>
+        <button class="quick-reply-btn" data-reply="How can I contact you?">📞 Contact</button>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Ask about our properties..." disabled>
+        <button id="sendBtn" disabled>
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+    </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// ══════════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════════
+const BASE_URL     = "http://localhost:8000";   // <-- your actual server.js port
+const API_URL      = BASE_URL + "/api/chat";
+const REGISTER_URL = BASE_URL + "/api/register";
+const SEND_OTP_URL = BASE_URL + "/api/send-otp";
+const VERIFY_OTP_URL = BASE_URL + "/api/verify-otp";
+const CALLBACK_URL = BASE_URL + "/api/callback-request";
+// ══════════════════════════════════════════
+// DOM ELEMENTS
+// ══════════════════════════════════════════
+const chatToggle          = document.getElementById('chatToggle');
+const chatContainer       = document.getElementById('chatContainer');
+const chatBubble          = document.getElementById('chatBubble');
+const chatMessages        = document.getElementById('chatMessages');
+const userInput           = document.getElementById('userInput');
+const sendBtn             = document.getElementById('sendBtn');
+const quickReplies        = document.getElementById('quickReplies');
+const typingIndicator     = document.getElementById('typingIndicator');
+const registrationOverlay = document.getElementById('registrationOverlay');
+const userDetailsForm     = document.getElementById('userDetailsForm');
+const submitBtn           = document.getElementById('submitBtn');
+const backToMenuBtn       = document.getElementById('backToMenuBtn');
+const userNameEl          = document.getElementById('userName');
+const userEmailEl         = document.getElementById('userEmail');
+const userPhoneEl         = document.getElementById('userPhone');
+const roiModal            = document.getElementById('roiModal');
+
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+let isProcessing       = false;
+let isRegistered       = false;
+let userData           = {};
+let waitingForCallback = false;
+let pendingQuery       = '';
+
+if (localStorage.getItem('suUserRegistered')) {
+    isRegistered = true;
+    userData = JSON.parse(localStorage.getItem('suUserData'));
+}
+
+// ══════════════════════════════════════════
+// VALIDATION
+// ══════════════════════════════════════════
+function validateEmail(email)         { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+function validatePhone(phone)         { return /^[6-9]\d{9}$/.test(phone); }
+function validateCallbackPhone(phone) {
+    const c = phone.replace(/\D/g,'');
+    return c.length === 10 && /^[6-9]\d{9}$/.test(c);
+}
+
+// ══════════════════════════════════════════
+// ROI CALCULATOR
+// ══════════════════════════════════════════
+const roiYearsSlider  = document.getElementById('roiYears');
+const roiYearsDisplay = document.getElementById('roiYearsDisplay');
+
+roiYearsSlider.addEventListener('input', () => {
+    roiYearsDisplay.textContent = roiYearsSlider.value + ' Yrs';
+    const pct = ((roiYearsSlider.value - roiYearsSlider.min) / (roiYearsSlider.max - roiYearsSlider.min)) * 100;
+    roiYearsSlider.style.background = `linear-gradient(to right, #1a4a2e ${pct}%, #e0e0e0 ${pct}%)`;
+});
+roiYearsSlider.dispatchEvent(new Event('input'));
+
+document.getElementById('roiCalcBtn').addEventListener('click', calculateROI);
+
+function formatINR(num) {
+    if (num >= 10000000) return '₹ ' + (num/10000000).toFixed(2) + ' Cr';
+    if (num >= 100000)   return '₹ ' + (num/100000).toFixed(2) + ' L';
+    return '₹ ' + num.toLocaleString('en-IN');
+}
+
+function calculateROI() {
+    const invested = parseFloat(document.getElementById('roiInvested').value) || 0;
+    const returned = parseFloat(document.getElementById('roiReturned').value) || 0;
+    const years    = parseFloat(roiYearsSlider.value) || 1;
+
+    if (invested <= 0) {
+        document.getElementById('roiInvested').style.borderColor = '#c47f2a';
+        setTimeout(() => document.getElementById('roiInvested').style.borderColor = '', 1500);
+        return;
+    }
+
+    const gain      = returned - invested;
+    const roi       = (gain / invested) * 100;
+    const simpleAnn = roi / years;
+    const cagr      = (Math.pow(returned / invested, 1 / years) - 1) * 100;
+    const isNeg     = gain < 0;
+
+    document.getElementById('resGain').textContent   = formatINR(Math.abs(gain)) + (isNeg ? ' 📉' : ' 📈');
+    document.getElementById('resGain').className     = 'result-value' + (isNeg ? ' negative' : '');
+    document.getElementById('resROI').textContent    = roi.toFixed(2) + '%';
+    document.getElementById('resROI').className      = 'result-value' + (isNeg ? ' negative' : '');
+    document.getElementById('resSimple').textContent = simpleAnn.toFixed(2) + '%';
+    document.getElementById('resSimple').className   = 'result-value' + (isNeg ? ' negative' : '');
+    document.getElementById('resCAGR').textContent   = (isNaN(cagr) ? '0' : cagr.toFixed(2)) + '%';
+    document.getElementById('resCAGR').className     = 'result-value' + (isNeg ? ' negative' : '');
+
+    const results = document.getElementById('roiResults');
+    results.style.display = 'block';
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function openROI() {
+    roiModal.classList.add('active');
+    document.getElementById('roiResults').style.display = 'none';
+}
+function closeROI() { roiModal.classList.remove('active'); }
+function closeROIandContact() {
+    closeROI();
+    userInput.value = 'How can I contact you?';
+    sendMessage();
+}
+
+document.getElementById('roiBackBtn').addEventListener('click', closeROI);
+
+// ══════════════════════════════════════════
+// CALLBACK HANDLER
+// ══════════════════════════════════════════
+async function handleCallbackRequest(number) {
+    try {
+        const res  = await fetch(CALLBACK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: userData.name, email: userData.email, phone: userData.phone, query: pendingQuery, callback_number: number })
+        });
+        const data = await res.json();
+        addMessage(data.success
+            ? `Thank you! ✅ Callback request received.\n\n📞 We'll call you at: ${number}\n\nOur property expert will reach out shortly.\n\nAnything else I can help you with?`
+            : "Sorry, something went wrong. Please contact:\n🌐 https://www.sumeruinfrastructures.com/contact",
+            'bot');
+        waitingForCallback = false;
+        pendingQuery = '';
+        showDefaultQuickReplies();
+    } catch {
+        addMessage("Connection error. Please visit:\n🌐 https://www.sumeruinfrastructures.com/contact", 'bot');
+    }
+}
+
+// ══════════════════════════════════════════
+// MENU HELPERS
+// ══════════════════════════════════════════
+backToMenuBtn.addEventListener('click', () => resetToMainMenu());
+
+function resetToMainMenu() {
+    waitingForCallback = false;
+    pendingQuery = '';
+    showDefaultQuickReplies();
+    addMessage("Back to main menu! 🏢 How can I help you find your perfect property?", 'bot');
+}
+
+function showDefaultQuickReplies() {
+    quickReplies.innerHTML = `
+        <button class="back-to-menu-btn" id="backToMenuBtn">⬅️ Back to Menu</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Eastern Arc">🏡 Eastern Arc</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Paras Tower">🏢 Paras Tower</button>
+        <button class="quick-reply-btn" data-reply="Tell me about Sumeru Vihar">🌿 Sumeru Vihar</button>
+        <button class="quick-reply-btn" data-reply="apartment types and configurations">🏠 Apartments</button>
+        <button class="quick-reply-btn" data-reply="amenities in the project">✨ Amenities</button>
+        <button class="quick-reply-btn roi-trigger-btn">💹 ROI Calculator</button>
+        <button class="quick-reply-btn" data-reply="property investment">💰 Investment</button>
+        <button class="quick-reply-btn" data-reply="How can I contact you?">📞 Contact</button>
+    `;
+    document.getElementById('backToMenuBtn').addEventListener('click', resetToMainMenu);
+}
+
+// ══════════════════════════════════════════
+// CHAT TOGGLE
+// ══════════════════════════════════════════
+chatToggle.addEventListener('click', () => {
+    chatContainer.classList.toggle('active');
+    chatToggle.classList.toggle('active');
+
+    if (chatContainer.classList.contains('active')) {
+        chatBubble.classList.add('hidden');
+        hideBadge();
+        if (isRegistered) {
+            registrationOverlay.classList.add('hidden');
+            userInput.focus();
+            if (!localStorage.getItem('suWelcomeShown')) {
+                setTimeout(() => {
+                    addMessage(`Hello ${userData.name}! 👋 Welcome to Sumeru Infrastructures!\n\nI'm your personal property assistant. Ask me about Eastern Arc, Paras Tower, Sumeru Vihar — or anything about apartments, amenities, pricing, and investment! 🏡`, 'bot');
+                    localStorage.setItem('suWelcomeShown', 'true');
+                }, 300);
+            }
+        } else {
+            registrationOverlay.classList.remove('hidden');
+            userNameEl.focus();
+        }
+    } else {
+        chatBubble.classList.remove('hidden');
+    }
+});
+
+// ══════════════════════════════════════════
+// REGISTRATION FORM
+// ══════════════════════════════════════════
+// ══════════════════════════════════════════
+// OTP LOGIC
+// ══════════════════════════════════════════
+let resendInterval = null;
+
+function startResendTimer() {
+    let seconds = 30;
+    const countdown = document.getElementById('resendCountdown');
+    const resendTimer = document.getElementById('resendTimer');
+    const resendBtn = document.getElementById('resendBtn');
+    resendTimer.style.display = 'inline';
+    resendBtn.style.display = 'none';
+    countdown.textContent = seconds;
+    if (resendInterval) clearInterval(resendInterval);
+    resendInterval = setInterval(() => {
+        seconds--;
+        countdown.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(resendInterval);
+            resendTimer.style.display = 'none';
+            resendBtn.style.display = 'inline';
+            resendBtn.disabled = false;
+        }
+    }, 1000);
+}
+
+function showOTPStep(email) {
+    document.getElementById('detailsStep').classList.add('hidden');
+    document.getElementById('otpStep').classList.add('active');
+    document.getElementById('otpEmailDisplay').textContent = email;
+    document.querySelectorAll('.otp-digit').forEach(inp => { inp.value = ''; inp.classList.remove('filled'); });
+    document.getElementById('otpError').classList.remove('show');
+    document.querySelector('.otp-digit').focus();
+    startResendTimer();
+}
+
+function showDetailsStep() {
+    document.getElementById('otpStep').classList.remove('active');
+    document.getElementById('detailsStep').classList.remove('hidden');
+    if (resendInterval) clearInterval(resendInterval);
+}
+
+function getOTPValue() {
+    return Array.from(document.querySelectorAll('.otp-digit')).map(i => i.value).join('');
+}
+
+// OTP digit inputs — auto-advance
+document.addEventListener('input', (e) => {
+    if (!e.target.classList.contains('otp-digit')) return;
+    const idx = parseInt(e.target.dataset.index);
+    const val = e.target.value.replace(/\D/g, '');
+    e.target.value = val;
+    e.target.classList.toggle('filled', val !== '');
+    if (val && idx < 5) {
+        document.querySelectorAll('.otp-digit')[idx + 1].focus();
+    }
+    // Auto-verify if all 6 filled
+    if (getOTPValue().length === 6) {
+        setTimeout(() => document.getElementById('verifyOtpBtn').click(), 200);
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (!e.target.classList.contains('otp-digit')) return;
+    const idx = parseInt(e.target.dataset.index);
+    if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+        document.querySelectorAll('.otp-digit')[idx - 1].focus();
+    }
+});
+
+// Handle paste on OTP
+document.addEventListener('paste', (e) => {
+    if (!e.target.classList.contains('otp-digit')) return;
+    e.preventDefault();
+    const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+    const digits = document.querySelectorAll('.otp-digit');
+    pasted.split('').forEach((ch, i) => {
+        if (digits[i]) { digits[i].value = ch; digits[i].classList.add('filled'); }
+    });
+    if (pasted.length === 6) setTimeout(() => document.getElementById('verifyOtpBtn').click(), 200);
+});
+
+// Back to details
+document.getElementById('backToDetailsBtn').addEventListener('click', showDetailsStep);
+
+// Resend OTP
+document.getElementById('resendBtn').addEventListener('click', async () => {
+    const email = userEmailEl.value.trim();
+    const name  = userNameEl.value.trim();
+    const phone = userPhoneEl.value.trim();
+    document.getElementById('resendBtn').disabled = true;
+    try {
+        const res = await fetch(SEND_OTP_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone}) });
+        const data = await res.json();
+        if (data.success) { startResendTimer(); }
+        else { alert(data.error || 'Failed to resend OTP'); }
+    } catch { alert('Connection error. Please try again.'); }
+});
+
+// Verify OTP button
+document.getElementById('verifyOtpBtn').addEventListener('click', async () => {
+    const otp = getOTPValue();
+    const email = userEmailEl.value.trim();
+    const name  = userNameEl.value.trim();
+    const phone = userPhoneEl.value.trim();
+    const otpError = document.getElementById('otpError');
+    otpError.classList.remove('show');
+
+    if (otp.length !== 6) {
+        otpError.textContent = 'Please enter the complete 6-digit OTP.';
+        otpError.classList.add('show');
+        return;
+    }
+
+    const verifyBtn = document.getElementById('verifyOtpBtn');
+    verifyBtn.disabled = true;
+    verifyBtn.innerHTML = '<span class="loading-spinner"></span>Verifying...';
+
+    try {
+        const res = await fetch(VERIFY_OTP_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email, otp}) });
+        const data = await res.json();
+        if (data.success) {
+            userData = {name, email, phone};
+            localStorage.setItem('suUserRegistered', 'true');
+            localStorage.setItem('suUserData', JSON.stringify(userData));
+            isRegistered = true;
+            if (resendInterval) clearInterval(resendInterval);
+            registrationOverlay.classList.add('hidden');
+            userInput.disabled = false; sendBtn.disabled = false;
+            userInput.focus();
+            setTimeout(() => {
+                addMessage(`Hello ${name}! 👋 Welcome to Sumeru Infrastructures!\n\nI'm your personal property assistant. Ask me about Eastern Arc, Paras Tower, Sumeru Vihar — or anything about apartments, amenities, pricing, and investment! 🏡`, 'bot');
+                localStorage.setItem('suWelcomeShown','true');
+                const btn = document.getElementById('backToMenuBtn');
+                if (btn) btn.classList.remove('show');
+            }, 300);
+        } else {
+            otpError.textContent = data.error || 'Invalid OTP. Please try again.';
+            otpError.classList.add('show');
+            document.querySelectorAll('.otp-digit').forEach(i => { i.value=''; i.classList.remove('filled'); });
+            document.querySelector('.otp-digit').focus();
+        }
+    } catch {
+        otpError.textContent = 'Connection error. Please try again.';
+        otpError.classList.add('show');
+    } finally {
+        verifyBtn.disabled = false;
+        verifyBtn.innerHTML = 'Verify & Start Chatting 🏡';
+    }
+});
+
+// Step 1: Send OTP
+userDetailsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+    document.querySelectorAll('#detailsStep input').forEach(el => el.classList.remove('error'));
+    const name  = userNameEl.value.trim();
+    const email = userEmailEl.value.trim();
+    const phone = userPhoneEl.value.trim();
+    let hasError = false;
+    if (!name) { userNameEl.classList.add('error'); const el=document.getElementById('nameError'); el.textContent='Please enter your name'; el.classList.add('show'); hasError=true; }
+    if (!email || !validateEmail(email)) { userEmailEl.classList.add('error'); const el=document.getElementById('emailError'); el.textContent=(!email?'Please enter your email':'Please enter a valid email'); el.classList.add('show'); hasError=true; }
+    if (!phone || !validatePhone(phone)) { userPhoneEl.classList.add('error'); const el=document.getElementById('phoneError'); el.textContent=(!phone?'Please enter your phone number':'Please enter a valid 10-digit number'); el.classList.add('show'); hasError=true; }
+    if (hasError) return;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="loading-spinner"></span>Sending OTP...';
+    try {
+        const res = await fetch(SEND_OTP_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone}) });
+        const data = await res.json();
+        if (data.success) {
+            showOTPStep(email);
+        } else {
+            alert(data.error || 'Failed to send OTP. Please try again.');
+        }
+    } catch { alert('Connection error. Please check your internet and try again.'); }
+    finally { submitBtn.disabled=false; submitBtn.innerHTML='Send OTP 📧'; }
+});
+
+userPhoneEl.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/\D/g,'').slice(0,10); });
+
+// ══════════════════════════════════════════
+// SEND MESSAGE
+// ══════════════════════════════════════════
+async function sendMessage() {
+    const message = userInput.value.trim();
+    if (!message || isProcessing) return;
+
+    if (waitingForCallback) {
+        if (validateCallbackPhone(message)) {
+            addMessage(message, 'user');
+            userInput.value = '';
+            isProcessing = true;
+            typingIndicator.style.display = 'block';
+            userInput.disabled = true; sendBtn.disabled = true;
+            scrollToBottom();
+            await handleCallbackRequest(message);
+            isProcessing = false;
+            typingIndicator.style.display = 'none';
+            userInput.disabled = false; sendBtn.disabled = false;
+            userInput.focus();
+        } else {
+            addMessage(message, 'user');
+            addMessage("❌ Please enter a valid 10-digit number starting with 6, 7, 8, or 9.\n\nExample: 9876543210", 'bot');
+            userInput.value = '';
+        }
+        return;
+    }
+
+    addMessage(message, 'user');
+    userInput.value = '';
+    isProcessing = true;
+    typingIndicator.style.display = 'block';
+    userInput.disabled = true; sendBtn.disabled = true;
+    scrollToBottom();
+
+    try {
+        const res = await fetch(API_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({message}) });
+        if (!res.ok) throw new Error('http');
+        const data = await res.json();
+        typingIndicator.style.display = 'none';
+        if (data.success && data.reply) {
+            addMessage(data.reply, 'bot');
+            if (data.requiresCallback) {
+                waitingForCallback = true;
+                pendingQuery = data.userQuery || message;
+                quickReplies.innerHTML = `<button class="back-to-menu-btn show" id="backToMenuBtn">⬅️ Cancel</button>`;
+                document.getElementById('backToMenuBtn').addEventListener('click', () => { waitingForCallback=false; pendingQuery=''; resetToMainMenu(); });
+            } else {
+                // Show back-to-menu button after bot responds, hide it briefly then show
+                const btn = document.getElementById('backToMenuBtn');
+                if (btn) { btn.classList.add('show'); }
+            }
+        } else { throw new Error('invalid'); }
+    } catch (err) {
+        typingIndicator.style.display = 'none';
+        addMessage(String(err).includes('fetch') ? "Unable to connect. Please check your internet and try again." : "Sorry, I encountered an error. Please try again.", 'bot');
+    } finally {
+        isProcessing = false;
+        userInput.disabled = false; sendBtn.disabled = false;
+        userInput.focus();
+    }
+}
+
+// ══════════════════════════════════════════
+// ADD MESSAGE
+// ══════════════════════════════════════════
+function addMessage(text, sender) {
+    const div = document.createElement('div');
+    div.className = `message ${sender}`;
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.innerHTML = text
+        .replace(/\n/g,'<br>')
+        .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g,'<em>$1</em>')
+        .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener noreferrer" style="color:#1a7a52;text-decoration:underline;word-break:break-all;">$1</a>');
+    div.appendChild(content);
+    chatMessages.insertBefore(div, typingIndicator.parentElement);
+    scrollToBottom();
+}
+
+// ══════════════════════════════════════════
+// UTILS
+// ══════════════════════════════════════════
+function scrollToBottom() { setTimeout(() => { chatMessages.scrollTop = chatMessages.scrollHeight; }, 100); }
+function hideBadge() { setTimeout(() => { const b = document.querySelector('.notification-badge'); if(b) b.style.display='none'; }, 300); }
+
+// Event listeners
+sendBtn.addEventListener('click', sendMessage);
+userInput.addEventListener('keypress', (e) => { if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();} });
+quickReplies.addEventListener('click', (e) => {
+    if (e.target.classList.contains('roi-trigger-btn')) { openROI(); return; }
+    if (e.target.classList.contains('quick-reply-btn')) {
+        const r = e.target.getAttribute('data-reply');
+        if (r) { userInput.value = r; sendMessage(); }
+    }
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key==='Escape') {
+        if (roiModal.classList.contains('active')) { closeROI(); }
+        else if (chatContainer.classList.contains('active')) { chatToggle.click(); }
+    }
+});
+
+console.log('🏢 Sumeru Infrastructures Chatbot + ROI Calculator ✅');
+</script>
+</body>
+</html>
