@@ -49,17 +49,83 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
         /* ── Chat Toggle Button ── */
-        .chat-toggle {
-            position: fixed;
-            bottom: 20px; right: 20px;
-            width: 65px; height: 65px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
-            border: none; cursor: pointer;
-            box-shadow: 0 8px 25px rgba(26,74,46,0.5);
-            display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 9999;
+
+/* ── GOLD SHINE SWEEP ── */
+.chat-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255,255,255,0) 30%,
+        rgba(255,215,140,0.85) 50%,
+        rgba(255,255,255,0) 70%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    animation: shineSweep 3.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+@keyframes shineSweep {
+    0%   { left: -150%; }
+    35%  { left: 150%; }
+    100% { left: 150%; }
+}
+
+
+      .chat-toggle {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a4a2e 0%, #0d2d1a 100%);
+    border: none; cursor: pointer;
+    box-shadow: 0 8px 25px rgba(26,74,46,0.5);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    overflow: hidden;
+
+/* ── ROBOT MASCOT ICON ── */
+.robot-icon {
+    position: relative;
+    width: 34px; height: 34px;
+    z-index: 3; /* stays above the shine sweep */
+}
+.robot-icon svg { width: 100%; height: 100%; overflow: visible; }
+.robot-antenna-dot {
+    animation: antennaGlow 1.8s ease-in-out infinite;
+    transform-origin: center;
+}
+@keyframes antennaGlow {
+    0%, 100% { opacity: 1; r: 3; }
+    50% { opacity: 0.55; r: 3.8; }
+}
+.robot-eye {
+    animation: robotBlink 3.2s ease-in-out infinite;
+    transform-origin: center;
+}
+@keyframes robotBlink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    93%, 97% { transform: scaleY(0.15); }
+}
+.robot-hand {
+    animation: robotWave 1.6s ease-in-out infinite;
+    transform-origin: 90% 20%;
+}
+@keyframes robotWave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(-8deg); }
+    75% { transform: rotate(16deg); }
+}
+
+
         }
         .chat-toggle:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 12px 35px rgba(26,74,46,0.6); }
         .chat-toggle svg { width: 32px; height: 32px; fill: white; }
@@ -344,16 +410,34 @@
 <!-- Chat Bubble -->
 <div class="chat-bubble" id="chatBubble">
     <span class="wave-emoji">👋</span>
-    <span>Looking for your dream property?</span>
+    <span id="chatBubbleText">Looking for your dream property?</span>
 </div>
 
 <!-- Chat Toggle Button -->
 <button class="chat-toggle" id="chatToggle">
     <span class="notification-badge">1</span>
-    <svg viewBox="0 0 24 24" class="chat-icon"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <span class="robot-icon chat-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- antenna -->
+            <line x1="50" y1="14" x2="50" y2="24" stroke="#c47f2a" stroke-width="3" stroke-linecap="round"/>
+            <circle class="robot-antenna-dot" cx="50" cy="11" r="3" fill="#c47f2a"/>
+            <!-- waving hand -->
+            <ellipse class="robot-hand" cx="18" cy="60" rx="7" ry="11" fill="#c47f2a"/>
+            <!-- head -->
+            <rect x="24" y="24" width="52" height="46" rx="23" fill="white"/>
+            <!-- visor -->
+            <rect x="30" y="38" width="40" height="20" rx="10" fill="#0d2d1a"/>
+            <!-- eyes -->
+            <circle class="robot-eye" cx="42" cy="48" r="5" fill="white"/>
+            <circle cx="42" cy="48" r="2" fill="#0d2d1a"/>
+            <circle class="robot-eye" cx="58" cy="48" r="5" fill="white"/>
+            <circle cx="58" cy="48" r="2" fill="#0d2d1a"/>
+            <!-- smile -->
+            <path d="M44 62 Q50 68 56 62" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </svg>
+    </span>
     <svg viewBox="0 0 24 24" class="close-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
 </button>
-
 <!-- Chat Container -->
 <div class="chat-container" id="chatContainer">
 
@@ -364,7 +448,7 @@
                 <img src="https://static.wixstatic.com/media/b69fe8_eb049ae6a1e84041b980c0b83f750f26~mv2.png/v1/fill/w_574,h_212,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_PNG.png" alt="Sumeru Infrastructures Logo" onerror="this.parentElement.innerHTML='🏢'">
             </div>
             <h2>Welcome to Sumeru Infrastructures!</h2>
-            <p>Please share your details to start working</p>
+            <p>Please share your details to start chatting</p>
         </div>
         <div class="registration-form">
             <!-- Step 1: User Details -->
@@ -528,7 +612,7 @@
 // ══════════════════════════════════════════
 // CONFIG
 // ══════════════════════════════════════════
-const BASE_URL     = "https://summer-cb.vercel.app";   // <-- your deployed backend
+const BASE_URL     = "http://localhost:8000";   // <-- your actual server.js port
 const API_URL      = BASE_URL + "/api/chat";
 const REGISTER_URL = BASE_URL + "/api/register";
 const SEND_OTP_URL = BASE_URL + "/api/send-otp";
@@ -1009,6 +1093,31 @@ document.addEventListener('keydown', (e) => {
 });
 
 console.log('🏢 Sumeru Infrastructures Chatbot + ROI Calculator ✅');
+
+
+// ══════════════════════════════════════════
+// ROTATING BUBBLE MESSAGES
+// ══════════════════════════════════════════
+const bubbleMessages = [
+    "Looking for your dream property?",
+    "How can I help you today?",
+    "Ask me about Eastern Arc, Paras Tower & Sumeru Vihar!",
+    "Get instant pricing & amenities info."
+];
+let bubbleMsgIndex = 0;
+
+setInterval(() => {
+    const textEl = document.getElementById('chatBubbleText');
+    if (!textEl || chatBubble.classList.contains('hidden')) return; // don't animate when hidden
+    bubbleMsgIndex = (bubbleMsgIndex + 1) % bubbleMessages.length;
+    textEl.style.transition = 'opacity 0.3s ease';
+    textEl.style.opacity = 0;
+    setTimeout(() => {
+        textEl.textContent = bubbleMessages[bubbleMsgIndex];
+        textEl.style.opacity = 1;
+    }, 300);
+}, 4000);
+
 </script>
 </body>
 </html>
